@@ -47,12 +47,16 @@
                                                             Action
                                                         </button>
                                                         <div class="dropdown-menu">
-                                                            <a class="dropdown-item" href="#"><i class="fa fa-trash"
-                                                                    aria-hidden="true"></i> Delete</a>
+                                                            @if (auth()->user()->role == 3 || auth()->user()->role == 2)
+                                                                <a class="dropdown-item" href="#"><i
+                                                                        class="fa fa-trash" aria-hidden="true"></i>
+                                                                    Delete</a>
+                                                            @endif
                                                             <a class="dropdown-item" href="#"><i
                                                                     class="fas fa-edit"></i> Edit</a>
-                                                            <a class="dropdown-item" href="#"><i class="fa fa-download"
-                                                                    aria-hidden="true"></i> Download</a>
+                                                            <a class="dropdown-item" href="#"><i
+                                                                    class="fa fa-download" aria-hidden="true"></i>
+                                                                Download</a>
                                                         </div>
                                                     </div>
                                                 </div>

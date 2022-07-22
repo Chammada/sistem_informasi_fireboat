@@ -69,11 +69,13 @@
                           Action
                         </button>
                         <div class="dropdown-menu">
+                          @if (auth()->user()->role == 3 || auth()->user()->role == 2)
                           <form action="{{ route('delete_data_berkas', ['id_data' => $data->id, 'id_sub_jenis' => $page['id_sub_jenis']] ) }}" method="POST">
                             @csrf
                             <button class="dropdown-item confirm-delete"><i class="fa fa-trash" aria-hidden="true"></i>
                               Delete</button>
                           </form>
+                          @endif
                           <a class="dropdown-item" href="{{ route('edit_berkas_page', ['id_data' => $data->id]) }}"><i class="fas fa-edit"></i> Edit</a>
                           <a class="dropdown-item" href="{{ route('download_file', ['id_data' => $data->id]) }}"><i class="fa fa-download" aria-hidden="true"></i>
                             Download</a>
